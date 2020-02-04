@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 	height = texture.getSize().y;
 	//--------------------------------------
 
-	sf::RenderWindow window(sf::VideoMode(width, height), "SFML");
+	sf::RenderWindow window(sf::VideoMode(width, height), "Hilbert Curve");
 	window.setFramerateLimit(30);
 
 	while (window.isOpen()) {
