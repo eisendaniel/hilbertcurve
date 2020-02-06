@@ -85,11 +85,7 @@ int main()
 			} else if (event.type == sf::Event::Resized) {
 				// update the view to the new size of the window
 				view.setSize(event.size.width, event.size.height);
-				view.setCenter(event.size.width / 2.0, event.size.height / 2.0);
 				window.setView(view);
-				SIZE = event.size.width > event.size.height ? event.size.height : event.size.width;
-				curve.clear();
-				HilbertCurve(n, curve);
 				updated = true;
 
 			} else if (event.type == sf::Event::KeyPressed) {
