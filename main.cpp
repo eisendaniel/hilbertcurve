@@ -34,14 +34,16 @@ void
 HilbertCurve(int n, sf::VertexArray &curve, double x0 = 0.0, double y0 = 0.0, double xi = 0.0, double xj = 1.0, double yi = 1.0, double yj = 0.0)
 {
 	if (n <= 0) {
+		// Calculate the coordinates of the curve in terms of percentage of canvas (0.0 -> 1.0)
 		double X = x0 + (xi + yi) / 2.0;
 		double Y = y0 + (xj + yj) / 2.0;
-		// Output the coordinates of the curve
+
 		sf::Color color(
 			255 - 128 * curve.getVertexCount() / vertices,
 			128 + 128 * curve.getVertexCount() / vertices,
 			128 * curve.getVertexCount() / vertices);
 
+		// Output the coordinates of the curve, scaling X,Y by SIZE
 		curve.append(sf::Vertex(sf::Vector2f(SIZE * X, SIZE * Y), color));
 		return;
 	}
@@ -84,6 +86,7 @@ int main()
 				// update the view to the new size of the window
 				view.setSize(float(event.size.width), float(event.size.height));
 				window.setView(view);
+				zoom = 1.0;
 				updated = true;
 
 			} else if (event.type == sf::Event::KeyPressed) {
