@@ -1,2 +1,2 @@
-# sfml-template
-sfml template src for clion/cmake
+# sfml-hilbertcurve
+Interavtinve Psuesdo hilbert curved generator and visulisor 
