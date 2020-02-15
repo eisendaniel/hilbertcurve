@@ -1,58 +1,33 @@
-#include <SFML/Graphics.hpp>
-#include<cmath>
+#include "utility.hpp"
 
-#define SIZE 900.0
-#define MAX_N 11
 int vertices = 4;
 
-int increment(int &n)
-{
-	n = n + 1 <= MAX_N ? n + 1 : MAX_N;
-	vertices = int(4 * pow(4, n - 1));
-	return n;
-}
-
-int decrement(int &n)
-{
-	n = n - 1 >= 1 ? n - 1 : 1;
-	vertices = int(4 * pow(4, n - 1));
-	return n;
-}
-
-void zoomViewAt(sf::Vector2i pixel, sf::RenderWindow &window, sf::View &view, float factor)
-{
-	const sf::Vector2f beforeCoord{window.mapPixelToCoords(pixel)};
-	view.zoom(factor);
-	window.setView(view);
-	const sf::Vector2f afterCoord{window.mapPixelToCoords(pixel)};
-	const sf::Vector2f offsetCoords{beforeCoord - afterCoord};
-	view.move(offsetCoords);
-	window.setView(view);
-}
-
 void
-HilbertCurve(int n, sf::VertexArray &curve, double x0 = 0.0, double y0 = 0.0, double xi = 0.0, double xj = 1.0, double yi = 1.0, double yj = 0.0)
+HilbertCurve(int n, sf::VertexArray &curve, sf::Image &gradient, double x0 = 0.0, double y0 = 0.0, double xi = 0.0, double xj = 1.0, double yi = 1.0, double yj = 0.0)
 {
 	if (n <= 0) {
 		// Calculate the coordinates of the curve in terms of percentage of canvas (0.0 -> 1.0)
 		double X = x0 + (xi + yi) / 2.0;
 		double Y = y0 + (xj + yj) / 2.0;
 
-		sf::Color color(
-			255 - 128 * curve.getVertexCount() / vertices,
-			128 + 128 * curve.getVertexCount() / vertices,
-			128 * curve.getVertexCount() / vertices);
+//		sf::Color color(
+//			255 - 128 * curve.getVertexCount() / vertices,
+//			128 + 128 * curve.getVertexCount() / vertices,
+//			128 * curve.getVertexCount() / vertices);
 
+		sf::Color color = colorGradient(gradient, (float)curve.getVertexCount() / (float)vertices);
 		// Output the coordinates of the curve, scaling X,Y by SIZE
 		curve.append(sf::Vertex(sf::Vector2f(SIZE * X, SIZE * Y), color));
 		return;
 	}
-	HilbertCurve(n - 1, curve, x0, y0, yi / 2.0, yj / 2.0, xi / 2.0, xj / 2.0);
-	HilbertCurve(n - 1, curve, x0 + xi / 2.0, y0 + xj / 2.0, xi / 2.0, xj / 2.0, yi / 2.0, yj / 2.0);
+	HilbertCurve(n - 1, curve, gradient, x0, y0, yi / 2.0, yj / 2.0, xi / 2.0, xj / 2.0);
+	HilbertCurve(n - 1, curve, gradient, x0 + xi / 2.0, y0 + xj / 2.0, xi / 2.0, xj / 2.0, yi / 2.0, yj / 2.0);
 	HilbertCurve(
-		n - 1, curve,
+		n - 1, curve, gradient,
 		x0 + xi / 2.0 + yi / 2.0, y0 + xj / 2.0 + yj / 2.0, xi / 2.0, xj / 2.0, yi / 2.0, yj / 2.0);
-	HilbertCurve(n - 1, curve, x0 + xi / 2.0 + yi, y0 + xj / 2.0 + yj, -yi / 2.0, -yj / 2.0, -xi / 2.0, -xj / 2.0);
+	HilbertCurve(
+		n - 1, curve, gradient,
+		x0 + xi / 2.0 + yi, y0 + xj / 2.0 + yj, -yi / 2.0, -yj / 2.0, -xi / 2.0, -xj / 2.0);
 
 }
 
@@ -72,8 +47,11 @@ int main()
 	sf::Vector2i pos = sf::Mouse::getPosition(window);
 	sf::Vector2i old_pos = pos;
 
+	sf::Image gradient;
+	gradient.loadFromFile("../res/color.jpg");
+
 	sf::VertexArray curve(sf::LineStrip);
-	HilbertCurve(n, curve);
+	HilbertCurve(n, curve, gradient);
 
 	while (window.isOpen()) {
 		sf::Event event = {};
@@ -93,11 +71,11 @@ int main()
 				if (event.key.code == sf::Keyboard::Up) {
 					updated = true;
 					curve.clear();
-					HilbertCurve(increment(n), curve);
+					HilbertCurve(increment(n, vertices), curve, gradient);
 				} else if (event.key.code == sf::Keyboard::Down) {
 					updated = true;
 					curve.clear();
-					HilbertCurve(decrement(n), curve);
+					HilbertCurve(decrement(n, vertices), curve, gradient);
 				}
 				break;
 			} else if (event.type == sf::Event::MouseButtonPressed) {

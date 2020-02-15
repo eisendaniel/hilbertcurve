@@ -87,6 +87,12 @@
 		<Unit filename="C:/Users/Daniel/projects/hilbertcurve/main.cpp">
 			<Option target="hilbertcurve"/>
 		</Unit>
+		<Unit filename="C:/Users/Daniel/projects/hilbertcurve/utility.cpp">
+			<Option target="hilbertcurve"/>
+		</Unit>
+		<Unit filename="C:/Users/Daniel/projects/hilbertcurve/utility.hpp">
+			<Option target="hilbertcurve"/>
+		</Unit>
 		<Unit filename="C:/Users/Daniel/projects/hilbertcurve/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

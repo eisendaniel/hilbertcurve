@@ -149,6 +149,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\hilbertcurve.dir\build.make CMakeFiles/hilbertcurve.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+utility.obj: utility.cpp.obj
+
+.PHONY : utility.obj
+
+# target to build an object file
+utility.cpp.obj:
+	$(MAKE) -f CMakeFiles\hilbertcurve.dir\build.make CMakeFiles/hilbertcurve.dir/utility.cpp.obj
+.PHONY : utility.cpp.obj
+
+utility.i: utility.cpp.i
+
+.PHONY : utility.i
+
+# target to preprocess a source file
+utility.cpp.i:
+	$(MAKE) -f CMakeFiles\hilbertcurve.dir\build.make CMakeFiles/hilbertcurve.dir/utility.cpp.i
+.PHONY : utility.cpp.i
+
+utility.s: utility.cpp.s
+
+.PHONY : utility.s
+
+# target to generate assembly for a file
+utility.cpp.s:
+	$(MAKE) -f CMakeFiles\hilbertcurve.dir\build.make CMakeFiles/hilbertcurve.dir/utility.cpp.s
+.PHONY : utility.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -161,6 +188,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... utility.obj
+	@echo ... utility.i
+	@echo ... utility.s
 .PHONY : help
 
 

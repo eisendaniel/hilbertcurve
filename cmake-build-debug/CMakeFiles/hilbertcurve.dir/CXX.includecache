@@ -7,6 +7,14 @@
 #IncludeRegexTransform: 
 
 C:/Users/Daniel/projects/hilbertcurve/main.cpp
+utility.hpp
+C:/Users/Daniel/projects/hilbertcurve/utility.hpp
+
+C:/Users/Daniel/projects/hilbertcurve/utility.cpp
+utility.hpp
+C:/Users/Daniel/projects/hilbertcurve/utility.hpp
+
+C:/Users/Daniel/projects/hilbertcurve/utility.hpp
 SFML/Graphics.hpp
 -
 cmath
