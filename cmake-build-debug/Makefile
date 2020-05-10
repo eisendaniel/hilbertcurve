@@ -122,6 +122,33 @@ hilbertcurve/fast:
 	$(MAKE) -f CMakeFiles\hilbertcurve.dir\build.make CMakeFiles/hilbertcurve.dir/build
 .PHONY : hilbertcurve/fast
 
+HilbertCurve.obj: HilbertCurve.cpp.obj
+
+.PHONY : HilbertCurve.obj
+
+# target to build an object file
+HilbertCurve.cpp.obj:
+	$(MAKE) -f CMakeFiles\hilbertcurve.dir\build.make CMakeFiles/hilbertcurve.dir/HilbertCurve.cpp.obj
+.PHONY : HilbertCurve.cpp.obj
+
+HilbertCurve.i: HilbertCurve.cpp.i
+
+.PHONY : HilbertCurve.i
+
+# target to preprocess a source file
+HilbertCurve.cpp.i:
+	$(MAKE) -f CMakeFiles\hilbertcurve.dir\build.make CMakeFiles/hilbertcurve.dir/HilbertCurve.cpp.i
+.PHONY : HilbertCurve.cpp.i
+
+HilbertCurve.s: HilbertCurve.cpp.s
+
+.PHONY : HilbertCurve.s
+
+# target to generate assembly for a file
+HilbertCurve.cpp.s:
+	$(MAKE) -f CMakeFiles\hilbertcurve.dir\build.make CMakeFiles/hilbertcurve.dir/HilbertCurve.cpp.s
+.PHONY : HilbertCurve.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -185,6 +212,9 @@ help:
 	@echo ... edit_cache
 	@echo ... hilbertcurve
 	@echo ... rebuild_cache
+	@echo ... HilbertCurve.obj
+	@echo ... HilbertCurve.i
+	@echo ... HilbertCurve.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

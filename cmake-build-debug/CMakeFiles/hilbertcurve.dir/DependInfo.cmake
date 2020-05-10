@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/Daniel/projects/hilbertcurve/HilbertCurve.cpp" "C:/Users/Daniel/projects/hilbertcurve/cmake-build-debug/CMakeFiles/hilbertcurve.dir/HilbertCurve.cpp.obj"
   "C:/Users/Daniel/projects/hilbertcurve/main.cpp" "C:/Users/Daniel/projects/hilbertcurve/cmake-build-debug/CMakeFiles/hilbertcurve.dir/main.cpp.obj"
   "C:/Users/Daniel/projects/hilbertcurve/utility.cpp" "C:/Users/Daniel/projects/hilbertcurve/cmake-build-debug/CMakeFiles/hilbertcurve.dir/utility.cpp.obj"
   )

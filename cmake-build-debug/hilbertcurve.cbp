@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Daniel/projects/hilbertcurve/HilbertCurve.cpp">
+			<Option target="hilbertcurve"/>
+		</Unit>
+		<Unit filename="C:/Users/Daniel/projects/hilbertcurve/HilbertCurve.hpp">
+			<Option target="hilbertcurve"/>
+		</Unit>
 		<Unit filename="C:/Users/Daniel/projects/hilbertcurve/main.cpp">
 			<Option target="hilbertcurve"/>
 		</Unit>

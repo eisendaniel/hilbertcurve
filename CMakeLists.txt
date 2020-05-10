@@ -8,6 +8,6 @@ set(SFML_STATIC_LIBRARIES TRUE)
 set(SFML_DIR D:/lib/SFML/lib/cmake/SFML)
 find_package(SFML COMPONENTS audio graphics network system window)
 
-add_executable(hilbertcurve main.cpp utility.cpp)
+add_executable(hilbertcurve main.cpp utility.cpp HilbertCurve.cpp)
 
 target_link_libraries(hilbertcurve sfml-audio sfml-graphics sfml-network sfml-system sfml-window)

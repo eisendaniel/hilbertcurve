@@ -10,11 +10,6 @@ HilbertCurve(int n, sf::VertexArray &curve, sf::Image &gradient, double x0 = 0.0
 		double X = x0 + (xi + yi) / 2.0;
 		double Y = y0 + (xj + yj) / 2.0;
 
-//		sf::Color color(
-//			255 - 128 * curve.getVertexCount() / vertices,
-//			128 + 128 * curve.getVertexCount() / vertices,
-//			128 * curve.getVertexCount() / vertices);
-
 		sf::Color color = colorGradient(gradient, (float)curve.getVertexCount() / (float)vertices);
 		// Output the coordinates of the curve, scaling X,Y by SIZE
 		curve.append(sf::Vertex(sf::Vector2f(SIZE * X, SIZE * Y), color));

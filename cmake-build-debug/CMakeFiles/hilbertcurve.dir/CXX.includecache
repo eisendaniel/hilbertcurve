@@ -6,11 +6,9 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Daniel/projects/hilbertcurve/main.cpp
-utility.hpp
-C:/Users/Daniel/projects/hilbertcurve/utility.hpp
+C:/Users/Daniel/projects/hilbertcurve/HilbertCurve.cpp
 
-C:/Users/Daniel/projects/hilbertcurve/utility.cpp
+C:/Users/Daniel/projects/hilbertcurve/main.cpp
 utility.hpp
 C:/Users/Daniel/projects/hilbertcurve/utility.hpp
 

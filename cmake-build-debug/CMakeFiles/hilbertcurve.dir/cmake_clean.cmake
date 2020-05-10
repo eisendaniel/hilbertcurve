@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/hilbertcurve.dir/HilbertCurve.cpp.obj"
   "CMakeFiles/hilbertcurve.dir/main.cpp.obj"
   "CMakeFiles/hilbertcurve.dir/utility.cpp.obj"
   "hilbertcurve.exe"
