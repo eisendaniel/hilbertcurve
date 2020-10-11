@@ -9,7 +9,6 @@ int increment(int &n, int &vertices)
 	n = n + 1 <= MAX_N ? n + 1 : MAX_N;
 	vertices = int(4 * pow(4, n - 1));
 	return n;
-
 }
 
 int decrement(int &n, int &vertices)
@@ -21,8 +20,10 @@ int decrement(int &n, int &vertices)
 
 sf::Color colorGradient(sf::Image &color, float x)
 {
-	if (x > 0.999) x = 0.999;
-	if (x < 0.001) x = 0.001;
+	if (x > 0.999)
+		x = 0.999;
+	if (x < 0.001)
+		x = 0.001;
 	return color.getPixel((int)(x * color.getSize().x), 0);
 }
 

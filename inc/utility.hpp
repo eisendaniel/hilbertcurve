@@ -6,7 +6,7 @@
 #define _UTILITY_HPP_
 
 #include <SFML/Graphics.hpp>
-#include<cmath>
+#include <cmath>
 
 #define SIZE 900.0
 #define MAX_N 11
