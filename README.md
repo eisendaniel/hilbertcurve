@@ -1,2 +1,3 @@
 # sfml-hilbertcurve
-Interavtinve Psuesdo hilbert curved generator and visulisor 
+
+Interactive Pseudo Hilbert curve generator and visualiser
